@@ -114,7 +114,8 @@ USE [Minions]
 GO
 
 ALTER TABLE [Users]
-DROP CONSTRAINT [PK__Users__3214EC073FA6D5E2]
+-- PK key will change every time when table is erased and new is created
+DROP CONSTRAINT [PK__Users__3214EC07FB772E8F]
 
 ALTER TABLE [Users]
 ADD CONSTRAINT [PK_UserCompositeIdIUsername] PRIMARY KEY([Id], [Username])

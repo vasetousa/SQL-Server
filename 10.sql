@@ -1,12 +1,13 @@
 -- 10
-USE [master]
+USE [Minions]
 GO
 
 CREATE TABLE [Users]
 	(
 	[Id] bigint PRIMARY KEY IDENTITY,
 	[Username] nvarchar(30) NOT NULL UNIQUE,
-	[Password] varchar(26) NOT NULL CHECK [Password] >= 5,	
+	[Password] varchar(26) NOT NULL,
+	CHECK (DATALENGTH([Password]) >= 5),	
 	[ProfilePicture] varbinary(MAX),
 	CHECK (DATALENGTH([ProfilePicture]) <= 900000),
 	[LastLoginTime] DATETIME2,
