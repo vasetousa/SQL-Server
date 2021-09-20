@@ -120,3 +120,8 @@ DROP CONSTRAINT [PK__Users__3214EC07FB772E8F]
 ALTER TABLE [Users]
 ADD CONSTRAINT [PK_UserCompositeIdIUsername] PRIMARY KEY([Id], [Username])
 
+USE [Minions]
+GO
+DROP TABLE [Users]
+-- go to problem 10
+
