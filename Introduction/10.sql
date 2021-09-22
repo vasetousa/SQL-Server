@@ -1,5 +1,5 @@
 -- 10
-USE [Minions]
+USE [Introduction]
 GO
 
 CREATE TABLE [Users]

@@ -2,12 +2,12 @@
 USE [master]
 GO
 
-CREATE DATABASE [Minions]
+CREATE DATABASE [Introduction]
 GO
 
 -- One way to create table + PK
 -- 2
-USE [Minions]
+USE [Introduction]
 CREATE TABLE [Minions] 
 	(
     [Id] int NOT NULL PRIMARY KEY,
@@ -22,7 +22,7 @@ CREATE TABLE [Towns]
 	)
 
 -- 3
-USE [Minions]
+USE [Introduction]
 GO
 
 ALTER TABLE [Minions]
@@ -32,7 +32,7 @@ ALTER TABLE [Minions]
 ADD CONSTRAINT [FK_MinionsTownId] FOREIGN KEY (TownId) REFERENCES [Towns]([Id])
 
 -- 4
-USE [Minions]
+USE [Introduction]
 GO
 
 INSERT INTO [Towns] ([Id], [Name]) 
@@ -48,20 +48,20 @@ VALUES
 	(3, 'Steward', NULL, 2)
 
 -- 5
-USE [Minions]
+USE [Introduction]
 GO
 
 TRUNCATE TABLE [Minions]
 
 -- 6
-USE [Minions]
+USE [Introduction]
 GO
 
 DROP TABLE [Minions]
 DROP TABLE [Towns]
 
 -- 7
-USE [Minions]
+USE [Introduction]
 GO
 
 CREATE TABLE [People]
@@ -87,7 +87,7 @@ VALUES
 
 
 -- 8
-USE [Minions]
+USE [Introduction]
 GO
 
 CREATE TABLE [Users]
@@ -110,7 +110,7 @@ VALUES
 	('Valentina', '111sdefds@', '11:44:08', 0)
 
 -- 9
-USE [Minions]
+USE [Introduction]
 GO
 
 ALTER TABLE [Users]
@@ -120,7 +120,7 @@ DROP CONSTRAINT [PK__Users__3214EC07FB772E8F]
 ALTER TABLE [Users]
 ADD CONSTRAINT [PK_UserCompositeIdIUsername] PRIMARY KEY([Id], [Username])
 
-USE [Minions]
+USE [Introduction]
 GO
 DROP TABLE [Users]
 -- go to problem 10

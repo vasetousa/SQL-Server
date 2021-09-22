@@ -1,4 +1,6 @@
 -- 14
+use master
+GO
 CREATE DATABASE [CarRental]
 GO
 USE [CarRental]

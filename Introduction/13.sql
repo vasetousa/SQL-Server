@@ -1,5 +1,4 @@
 -- 13
-CREATE DATABASE [Movies]
 USE [Movies]
 GO
 

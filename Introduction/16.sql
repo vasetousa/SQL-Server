@@ -1,8 +1,9 @@
 -- 16
-CREATE DATABASE [SoftUni]
+USE master
 GO
-
-USE [SoftUni]
+CREATE DATABASE [CRUD]
+GO
+USE [CRUD]
 GO
 
 CREATE TABLE [Towns]

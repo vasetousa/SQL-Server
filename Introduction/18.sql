@@ -1,5 +1,5 @@
 -- 18
-USE [SoftUni]
+USE [CRUD]
 GO
 
 INSERT INTO [Towns]
