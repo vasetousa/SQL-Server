@@ -16,9 +16,10 @@ CREATE TABLE [Exams]
 
 CREATE TABLE [StudentsExams]
 	(
-	[StudentID] int FOREIGN KEY REFERENCES [Students]([StudentID])
-	,[ExamID] int FOREIGN KEY REFERENCES [Exams]([ExamID])
-	CONSTRAINT [PK_StudentsExams] PRIMARY KEY ([StudentID], [ExamID])
+	[StudentID] int FOREIGN KEY REFERENCES [Students]([StudentID]) NOT NULL
+	,[ExamID] int FOREIGN KEY REFERENCES [Exams]([ExamID]) NOT NULL
+	-- CONSTRAINT [PK_StudentsExams] PRIMARY KEY ([StudentID], [ExamID])
+	PRIMARY KEY ([StudentID], [ExamID])
 	)
 
 
@@ -33,3 +34,12 @@ VALUES
 	('SpringMVC')
 	,('Neo4j')
 	,('Oracle 11g')
+
+INSERT INTO [StudentsExams]([StudentID], [ExamID])
+VALUES
+	(1,	 101)
+	,(1, 102)
+	,(2, 101)
+	,(3, 103)
+	,(2, 102)
+	,(2, 103)

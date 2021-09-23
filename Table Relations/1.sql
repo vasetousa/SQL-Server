@@ -24,7 +24,7 @@ CREATE TABLE [Persons]
 	   [PersonID] int NOT NULL PRIMARY KEY IDENTITY 
       ,[FirstName] varchar(20) NOT NULL
       ,[Salary] decimal(10, 2) NOT NULL
-      ,[PassportID] int FOREIGN KEY REFERENCES [Passports]([PassportID]) NOT NULL
+      ,[PassportID] int FOREIGN KEY REFERENCES [Passports]([PassportID]) NOT NULL UNIQUE
 	)
 
 INSERT INTO [Persons]([FirstName], [Salary], [PassportID])
