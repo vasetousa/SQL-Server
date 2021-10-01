@@ -12,4 +12,3 @@ FROM
 JOIN [Departments] as d ON d.[DepartmentID] = e.[DepartmentID]
 WHERE d.[Name] = 'Sales'
 ORDER BY e.[EmployeeID] ASC
-
