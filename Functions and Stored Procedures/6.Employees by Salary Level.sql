@@ -2,11 +2,16 @@
 USE [SoftUni]
 GO
 
-CREATE OR ALTER FUNCTION ufn_GetSalaryLevel(@salary MONEY)
 
-RETURNS varchar(10)
+
+CREATE OR ALTER PROCEDURE usp_EmployeesBySalaryLevel (@Level varchar(7))
 AS
-		BEGIN
-			DECLARE @salaryLevel VARCHAR(10)IF (@Salary < 30000)    SET @salaryLevel = 'Low'ELSE IF(@Salary <= 50000)    SET @salaryLevel = 'Average'ELSE    SET @salaryLevel = 'High'RETURN @salaryLevel
-		END
-GO
+SELECT
+e.[FirstName],
+e.[LastName]
+FROM
+[Employees] AS e
+WHERE dbo.ufn_GetSalaryLevel([Salary]) = @Level
+
+
+EXEC SoftUni.dbo.usp_EmployeesBySalaryLevel 'high'
