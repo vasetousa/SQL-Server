@@ -11,7 +11,7 @@ e.[FirstName],
 e.[LastName]
 FROM
 [Employees] AS e
-WHERE dbo.ufn_GetSalaryLevel([Salary]) = @Level
+WHERE dbo.udf_GetSalaryLevel([Salary]) = @Level
 
 
 EXEC SoftUni.dbo.usp_EmployeesBySalaryLevel 'high'

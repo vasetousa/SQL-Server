@@ -2,7 +2,7 @@
 USE [SoftUni]
 GO
 
-CREATE OR ALTER FUNCTION ufn_GetSalaryLevel(@salary MONEY)
+CREATE OR ALTER FUNCTION [dbo].[udf_GetSalaryLevel](@salary MONEY)
 
 RETURNS varchar(10)
 AS
@@ -20,7 +20,9 @@ RETURN @salaryLevel
 GO
 
 SELECT 
+[FirstName],
 [Salary],
-dbo.ufn_GetSalaryLevel([Salary]) AS [Salary Level]
+dbo.udf_GetSalaryLevel([Salary]) AS [Salary Level]
 FROM
 [Employees]
+ORDER BY [Salary Level]
