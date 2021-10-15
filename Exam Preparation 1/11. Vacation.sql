@@ -9,7 +9,7 @@ BEGIN
     RETURN 'Invalid flight!'
     RETURN CONCAT('Total price ', (SELECT TOP(1) ts.[Price] FROM [Tickets] AS ts 
       JOIN [Flights] AS f ON ts.[FlightId] = f.[Id]
-     WHERE f.[Origin] = @origin AND f.Destination = @destination) * @peopleCount)
+     WHERE f.[Origin] = @origin AND f.[Destination] = @destination) * @peopleCount)
 END
  
  SELECT dbo.udf_CalculateTickets('Kolyshley','Rancabolang', 33)
